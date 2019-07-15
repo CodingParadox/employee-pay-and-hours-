@@ -1,0 +1,42 @@
+#include <iostream>
+
+const int employes = 7;
+    const long empId[employes] = {5658845, 4520125, 7895122, 8777541, 8451277, 1302850, 7580489};
+    int hours[employes];
+    double payRate[employes];
+    double wages[employes];
+
+void viewInfo();
+void editInfo();
+
+int main()
+{
+    editInfo();
+    viewInfo();
+
+    return 0;
+}
+
+void viewInfo()
+    {
+        for(int i = 0; i < employes; i++)
+        {
+            std::cout << "employee id: " << empId[i] << std::endl;
+            std::cout << "Gross wage: " << wages[i] << std::endl << std::endl;
+        }
+    }
+
+
+    void editInfo()
+    {
+        for(int i = 0; i < employes; i++)
+        {
+            std::cout << "enter hours worked for employee: " << empId[i] << std::endl;
+            std:: cin >> hours[i];
+            std::cout << "enter pay rate for employee " << empId[i] << std::endl;
+            std::cin >> payRate[i];
+            std::cout << std::endl;
+            wages[i] = hours[i] * payRate[i];
+        }
+        std::cout << std::endl << std::endl;
+    }
